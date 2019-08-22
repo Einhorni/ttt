@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+// FontAwesome
+$fa_font_path: "~@fortawesome/fontawesome-free/webfonts";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+
+// OpenSans
+$FontPathOpenSans: "~open-sans-fonts/open-sans";
+@import '~open-sans-fonts/open-sans';
+body {
+  font-family: 'Open Sans' !important;
+  .button.custom-disabled[disabled] {  
+      color: #FF0000 !important;
+  }
+}
+
+// Bulma
+@import "~bulma/bulma";
+
+//########################################
+// First include initial variables and helpers function from Bulma
+
+@import "./../../node_modules/bulma/sass/utilities/initial-variables";
+
+@import "./../../node_modules/bulma/sass/utilities/functions";
+
+
+
+//set disabled button font color not opaque
+
+$button-disabled-opacity: 1;
+
+// Setup custom Colors
+
+$custom-purple: #c895f1;
+
+$custom-purple-invert: findColorInvert($custom-purple);
+
+$custom-light-blue: #55b6ee;
+
+$custom-light-blue-invert: findColorInvert($custom-light-blue);
+
+// Set your brand colors
+$purple: #debaee;
+$purple-grey: #d4c9d8;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$light-rose: #fff4fa;
+$light-pink: #d56cd5;
+//$light-purple: #e1a3fd;
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$info: $light-pink;
+$link: $pink;
+$white-bis: $light-rose;
+$link-focus-border: $light-pink;
+//$grey-light: $light-purple;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: $purple-grey;
+$input-shadow: none;
+
+// Since bulma 7.0 we have `custom-colors` and `custom-shades`
+
+$custom-colors: ( "custom-light-blue":($custom-light-blue, $custom-light-blue-invert), "custom-purple": ($custom-purple, $custom-purple-invert), );
+
+
+
+// Import the derived variables from Bulma
+
+// It will use our $custom-colors
+
+@import "./../../node_modules/bulma/sass/utilities/derived-variables";
+
+@import "./../../node_modules/bulma/sass/elements/button";
+
+
